@@ -22,6 +22,11 @@ public:
     double calcAvg();
     void print();
     friend ostream& operator<<(ostream& out, const Team& other);
+
+    bool operator<(Team& t);
+    bool operator==(Team& t);
+
+
 };
 
 

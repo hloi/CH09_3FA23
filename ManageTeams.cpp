@@ -52,8 +52,8 @@ void ManageTeams::readFile(string filename) {
         // Attempt to read next team
         getline(teamFS, teamName);
     }
-
     teamFS.close();
+    sort(teams.begin(), teams.end()); // ascending order
 }
 
 void ManageTeams::print() {
@@ -69,16 +69,41 @@ void ManageTeams::writeFile(string filename) {
         cout << "Could not open file " << filename << "." << endl;
         return;
     }
+    outFS << *this;
 
-    for (size_t i=0; i<teams.size(); i++) {
-        outFS << teams.at(i) << " " << teams.at(i).calcAvg() << endl;
-    }
+//    for (size_t i=0; i<teams.size(); i++) {
+//        outFS << teams.at(i) << " " << teams.at(i).calcAvg() << endl;
+//    }
     outFS.close();
 }
 
 ostream &operator<<(ostream &out, ManageTeams &other) {
     for (size_t i=0; i<other.teams.size(); i++) {
-        out << other.teams.at(i) << " " << other.teams.at(i).calcAvg() << endl;
+        try {
+            out << other.teams.at(i) << " " << other.teams.at(i).calcAvg() << endl;
+        }
+        catch (const char* e) {
+            cout << e << endl;
+        }
+        catch (int e) {
+            out << other.teams.at(i) << " " << "int exception." << endl;
+        }
+        catch (runtime_error& e) {
+            out << other.teams.at(i) << " " << e.what() << endl;
+        }
+        catch (exception &e){
+            out << other.teams.at(i) << " " << e.what() << endl;
+        }
+        catch (...) {
+            out << "Exception throw." << endl;
+        }
+
     }
     return out;
 }
+
+vector<Team> &ManageTeams::getTeams() {
+    return teams;
+}
+
+

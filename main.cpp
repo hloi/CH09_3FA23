@@ -67,5 +67,5 @@ int main() {
     ManageTeams teamList;
     teamList.readFile("teams.txt");
     cout << teamList;
-    teamList.writeFile("teasmavg.out");
+    teamList.writeFile("teasmavg1.out");
 }

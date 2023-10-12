@@ -8,6 +8,7 @@
 #include "Team.h"
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using std::ostream;
 using std::vector;
@@ -21,6 +22,7 @@ public:
     void writeFile(string filename);
     void print();
     friend ostream& operator<<(ostream& out, ManageTeams& other);
+    vector<Team>& getTeams();
 };
 
 

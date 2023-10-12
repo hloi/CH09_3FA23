@@ -41,29 +41,80 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target unittest
+
+
+#############################################
+# Order-only phony target for unittest
+
+build cmake_object_order_depends_target_unittest: phony || runner.cpp
+
+build CMakeFiles/unittest.dir/runner.cpp.obj: CXX_COMPILER__unittest_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/cmake-build-debug/runner.cpp || cmake_object_order_depends_target_unittest
+  DEP_FILE = CMakeFiles\unittest.dir\runner.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
+  OBJECT_DIR = CMakeFiles\unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles\unittest.dir
+
+build CMakeFiles/unittest.dir/Team.cpp.obj: CXX_COMPILER__unittest_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/Team.cpp || cmake_object_order_depends_target_unittest
+  DEP_FILE = CMakeFiles\unittest.dir\Team.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
+  OBJECT_DIR = CMakeFiles\unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles\unittest.dir
+
+build CMakeFiles/unittest.dir/ManageTeams.cpp.obj: CXX_COMPILER__unittest_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/ManageTeams.cpp || cmake_object_order_depends_target_unittest
+  DEP_FILE = CMakeFiles\unittest.dir\ManageTeams.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
+  OBJECT_DIR = CMakeFiles\unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles\unittest.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target unittest
+
+
+#############################################
+# Link the executable unittest.exe
+
+build unittest.exe: CXX_EXECUTABLE_LINKER__unittest_Debug CMakeFiles/unittest.dir/runner.cpp.obj CMakeFiles/unittest.dir/Team.cpp.obj CMakeFiles/unittest.dir/ManageTeams.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\unittest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = unittest.exe
+  TARGET_IMPLIB = libunittest.dll.a
+  TARGET_PDB = unittest.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target CH09_3FA23
 
 
 #############################################
 # Order-only phony target for CH09_3FA23
 
-build cmake_object_order_depends_target_CH09_3FA23: phony || CMakeFiles/CH09_3FA23.dir
+build cmake_object_order_depends_target_CH09_3FA23: phony || runner.cpp
 
-build CMakeFiles/CH09_3FA23.dir/main.cpp.obj: CXX_COMPILER__CH09_3FA23_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/main.cpp || cmake_object_order_depends_target_CH09_3FA23
-  DEP_FILE = CMakeFiles\CH09_3FA23.dir\main.cpp.obj.d
+build CMakeFiles/CH09_3FA23.dir/runner.cpp.obj: CXX_COMPILER__CH09_3FA23_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/cmake-build-debug/runner.cpp || cmake_object_order_depends_target_CH09_3FA23
+  DEP_FILE = CMakeFiles\CH09_3FA23.dir\runner.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
   OBJECT_DIR = CMakeFiles\CH09_3FA23.dir
   OBJECT_FILE_DIR = CMakeFiles\CH09_3FA23.dir
 
 build CMakeFiles/CH09_3FA23.dir/Team.cpp.obj: CXX_COMPILER__CH09_3FA23_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/Team.cpp || cmake_object_order_depends_target_CH09_3FA23
   DEP_FILE = CMakeFiles\CH09_3FA23.dir\Team.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
   OBJECT_DIR = CMakeFiles\CH09_3FA23.dir
   OBJECT_FILE_DIR = CMakeFiles\CH09_3FA23.dir
 
 build CMakeFiles/CH09_3FA23.dir/ManageTeams.cpp.obj: CXX_COMPILER__CH09_3FA23_unscanned_Debug C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/ManageTeams.cpp || cmake_object_order_depends_target_CH09_3FA23
   DEP_FILE = CMakeFiles\CH09_3FA23.dir\ManageTeams.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -Ic:/cxxtest-4.4
   OBJECT_DIR = CMakeFiles\CH09_3FA23.dir
   OBJECT_FILE_DIR = CMakeFiles\CH09_3FA23.dir
 
@@ -75,7 +126,7 @@ build CMakeFiles/CH09_3FA23.dir/ManageTeams.cpp.obj: CXX_COMPILER__CH09_3FA23_un
 #############################################
 # Link the executable CH09_3FA23.exe
 
-build CH09_3FA23.exe: CXX_EXECUTABLE_LINKER__CH09_3FA23_Debug CMakeFiles/CH09_3FA23.dir/main.cpp.obj CMakeFiles/CH09_3FA23.dir/Team.cpp.obj CMakeFiles/CH09_3FA23.dir/ManageTeams.cpp.obj
+build CH09_3FA23.exe: CXX_EXECUTABLE_LINKER__CH09_3FA23_Debug CMakeFiles/CH09_3FA23.dir/runner.cpp.obj CMakeFiles/CH09_3FA23.dir/Team.cpp.obj CMakeFiles/CH09_3FA23.dir/ManageTeams.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CH09_3FA23.dir
@@ -84,6 +135,18 @@ build CH09_3FA23.exe: CXX_EXECUTABLE_LINKER__CH09_3FA23_Debug CMakeFiles/CH09_3F
   TARGET_FILE = CH09_3FA23.exe
   TARGET_IMPLIB = libCH09_3FA23.dll.a
   TARGET_PDB = CH09_3FA23.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\hloi\CLionProjects\CSC109\CH09.3FA23\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
 
 
 #############################################
@@ -108,10 +171,21 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Custom command for runner.cpp
+
+build runner.cpp | ${cmake_ninja_workdir}runner.cpp: CUSTOM_COMMAND C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/Team.cpp C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/ManageTeams.cpp C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/newCxxTest.h
+  COMMAND = cmd.exe /C "cd /D C:\Users\hloi\CLionProjects\CSC109\CH09.3FA23\cmake-build-debug && C:\ProgramData\anaconda3\python.exe c:/cxxtest-4.4/bin/cxxtestgen --error-printer -o C:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/cmake-build-debug/runner.cpp C:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/Team.cpp C:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/ManageTeams.cpp C:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/newCxxTest.h"
+  DESC = Generating runner.cpp
+  restat = 1
+
 # =============================================================================
 # Target aliases.
 
 build CH09_3FA23: phony CH09_3FA23.exe
+
+build unittest: phony unittest.exe
 
 # =============================================================================
 # Folder targets.
@@ -121,7 +195,7 @@ build CH09_3FA23: phony CH09_3FA23.exe
 #############################################
 # Folder: C:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/cmake-build-debug
 
-build all: phony CH09_3FA23.exe
+build all: phony unittest.exe CH09_3FA23.exe
 
 # =============================================================================
 # Built-in targets
@@ -130,14 +204,14 @@ build all: phony CH09_3FA23.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindCxxTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindCygwin.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindMsys.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPerl.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindCxxTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindCygwin.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindMsys.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPerl.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hloi/CLionProjects/CSC109/CH09.3FA23/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################
